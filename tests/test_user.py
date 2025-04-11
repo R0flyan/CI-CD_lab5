@@ -41,9 +41,14 @@ def test_create_user_with_valid_email():
 
 def test_create_user_with_invalid_email():
     '''Создание пользователя с почтой, которую использует другой пользователь'''
+    client.post("/api/v1/user", json={
+        "name": users[2]['name'],
+        "email": users[2]['email']
+    })
+
     response = client.post("/api/v1/user", json={
         "name": "Duplicate User",
-        "email": users[0]['email']
+        "email": users[2]['email']
     })
     assert response.status_code == 409
     assert response.json() == {"detail": "User with this email already exists"}
