@@ -1,7 +1,7 @@
 FROM python:3.11
 
 COPY requirements.txt .
-RUN fastapi pytest httpx uvicorn pydantic-settings
+RUN pip install -r requirements.txt
 
 WORKDIR /app
 COPY src .
