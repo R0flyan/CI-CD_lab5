@@ -15,6 +15,11 @@ users = [
         'id': 2,
         'name': 'Petr Petrov',
         'email': 'p.p.petrov@mail.com',
+    },
+    {
+        'id': 3,
+        'name': 'Sergey Sergeev',
+        'email': 's.s.sergeev@mail.com',
     }
 ]
 
